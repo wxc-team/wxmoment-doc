@@ -8,9 +8,9 @@ WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详�
 
 ### 下载安装
 
-前往 [NodeJS 官网](https://nodejs.org/) 下载安装包并按指南安装 NodeJS，下载最新的 [工作流压缩包](https://github.com/TmT/WxMoment-Workflow/releases) 并解压。
+前往 [NodeJS 官网](https://nodejs.org/) 下载安装包并按指南安装 NodeJS，安装完成后请下载最新的 [工作流压缩包](https://github.com/TmT/WxMoment-Workflow/releases) 并解压。
 
-双击工作流目录中的 `安装.bat` 文件即可开始安装依赖，或者执行命令：
+双击工作流目录中的 `安装.bat` 文件（windows用户请右键使用管理员身份打开）即可开始安装依赖，若出现问题建议直接在命令行执行以下命令（windows用户管理员身份打开cmd，mac用户请加sodu）：
 
 ```bash
 $ cd WxMoment-Workflow
