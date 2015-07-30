@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=renderer content=webkit>
+    
+    <title>自定义详情页前端工作流 | 微信朋友圈广告规范</title>
+    
+    <meta name="author" content="WXG_OPB_Design">
+    
+    
+    <meta name="description"
+          content="WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详情页开发者提供的工作流。工作流集成了详情页开发中的常见任务，可以简化开发工作，并在打包环节对资源进行压缩合并优化。
+
+工作流包含了批处理文件，Windows 用户可直接双击执行。Mac 用户可以执行相应的命令。
+
+下">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta property="og:title" content="自定义详情页前端工作流"/>
+    
+    <meta property="og:site_name" content="微信朋友圈广告规范"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <meta http-equiv="Expires" contect="Thu Jul 30 2015 10:54:50 GMT+0800">
+    <meta http-equiv="Pragma" contect="no-cache">
+</head>
+<body>
+<div class="head" id="header">
+    <div class="head_box">
+        <div class="inner wrp">
+            <div class="logo"><a href="https://mp.weixin.qq.com/" target="_blank" title="微信公众平台"></a></div>
+        </div>
+    </div>
+</div>
+<div id="body" class="body page_news ">
+    <div class="container_box side_l cell_layout">
+        <div class="container_hd">
+            <h2>微信朋友圈广告规范</h2>
+        </div>
+        <div class="container_bd">
+            <div class="col_side">
+                <div class="menu_primary_box" id="myMenu">
+                    <ul>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="朋友圈推广案例" href="./case.html"><strong>朋友圈推广案例</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="视觉交互规范" href="./ue.html"><strong>视觉交互规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="模版详情页规范" href="./template.html"><strong>模版详情页规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页技术规范" href="./dev.html"><strong>自定义详情页技术规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item selected ">
+                            <a class="menu_primary_link" title="自定义详情页前端工作流" href="./workflow.html"><strong>自定义详情页前端工作流</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页前端通用库" href="./WxMoment.html"><strong>自定义详情页前端通用库</strong> </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col_main">
+                <div class="inner">
+                    <div class="yue">
+    <h1 class="page-title">自定义详情页前端工作流</h1>
+    <p>WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详情页开发者提供的工作流。工作流集成了详情页开发中的常见任务，可以简化开发工作，并在打包环节对资源进行压缩合并优化。</p>
+<blockquote>
+<p>工作流包含了批处理文件，Windows 用户可直接双击执行。Mac 用户可以执行相应的命令。</p>
+</blockquote>
+<h3 id="下载安装">下载安装</h3><p>前往 <a href="https://nodejs.org/" target="_blank" rel="external">NodeJS 官网</a> 下载安装包并按指南安装 NodeJS，下载最新的 <a href="https://github.com/TmT/WxMoment-Workflow/releases" target="_blank" rel="external">工作流压缩包</a> 并解压。</p>
+<p>双击工作流目录中的 <code>安装.bat</code> 文件即可开始安装依赖，或者执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow</span><br><span class="line">$ npm install gulp -g --registry=https://r.cnpmjs.org</span><br><span class="line">$ npm install --registry=https://r.cnpmjs.org</span><br></pre></td></tr></table></figure>
+<h3 id="目录说明">目录说明</h3><p>所有的开发都在 <code>src</code> 目录下进行，你只需要按约定好的放置相应文件，并按自己的项目需求编写代码即可。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#9500;&#9472;&#9472; package.json&#10;&#9500;&#9472;&#9472; tasks                           //&#24037;&#20316;&#27969;&#20219;&#21153;&#37197;&#32622;&#65288;&#19968;&#33324;&#19981;&#38656;&#35201;&#20462;&#25913;&#65289;&#10;&#9492;&#9472;&#9472; 20150514-promo-vivo             //&#31034;&#20363;&#39033;&#30446;&#65292;&#39033;&#30446;&#30446;&#24405;&#10; &#160;&#160; &#9500;&#9472;&#9472; .tmtworkflowrc              //&#24037;&#20316;&#27969;&#30340;&#39033;&#30446;&#37197;&#32622;&#25991;&#20214;&#65288;&#19968;&#33324;&#19981;&#38656;&#35201;&#20462;&#25913;&#65289;&#10; &#160;&#160; &#9500;&#9472;&#9472; gulpfile.js                 //&#24037;&#20316;&#27969;&#30340;&#20219;&#21153;&#37197;&#32622;&#25991;&#20214;&#65288;&#19968;&#33324;&#19981;&#38656;&#35201;&#20462;&#25913;&#65289;&#10;    &#9492;&#9472;&#9472; src                         //&#28304;&#25991;&#20214;&#30446;&#24405;&#65292;&#25152;&#26377;&#30340;&#24320;&#21457;&#22312;&#27492;&#30446;&#24405;&#19979;&#36827;&#34892;&#10; &#160;&#160;     &#9500;&#9472;&#9472; css                     //&#26679;&#24335;&#34920;&#30446;&#24405;&#65292;&#20351;&#29992; Less&#65292;&#21482;&#26377; style-*.less &#30340;&#25991;&#20214;&#21517;&#20250;&#34987;&#32534;&#35793;&#10; &#160;&#160;     &#9474;&#160;&#160; &#9492;&#9472;&#9472; style-promo.less&#10;&#160; &#160;     &#9500;&#9472;&#9472; html                     //HTML&#30446;&#24405;&#10; &#160;&#160;     &#9474;&#160;&#160; &#9492;&#9472;&#9472; index.html            &#10; &#160;&#160;     &#9500;&#9472;&#9472; img                      //&#22270;&#29255;&#30446;&#24405; &#10; &#160;&#160;     &#9492;&#9472;&#9472; slice                    //&#38634;&#30887;&#22270;&#30446;&#24405;&#65292;&#27492;&#30446;&#24405;&#19979;&#30340;&#22270;&#29255;&#20250;&#36827;&#34892;&#21512;&#24182;&#65292;&#21516;&#21517;&#30340; @2x &#22270;&#29255;&#20250;&#34987;&#35782;&#21035;&#24182;&#36827;&#34892;&#21512;&#24182;</span><br></pre></td></tr></table></figure>
+<h3 id="创建项目">创建项目</h3><p>从 <code>20150514-promo-vivo</code> 复制一个文件夹，重命名为自己的项目。</p>
+<blockquote>
+<p>命名规则：YYYYMMDD-promo-品牌名称。<br>YYYYMMDD 为 4 位年份，2 位月份，2 位日期数字组成，品牌名称为全小写英文字母。</p>
+</blockquote>
+<h3 id="任务介绍">任务介绍</h3><p><strong>开发任务</strong></p>
+<p>执行 <code>开发.bat</code> 开始执行任务，或执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow/project</span><br><span class="line">$ gulp build_dev</span><br></pre></td></tr></table></figure>
+<p>此任务将启动一个 HTTP Server，并自动在浏览器打开 <code>http://localhost:8080/html/index.html</code> 这样的地址。</p>
+<p><strong>打包任务</strong></p>
+<p>开发完成后，执行 <code>打包.bat</code>，或执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow/project</span><br><span class="line">$ gulp zip</span><br></pre></td></tr></table></figure>
+<p>此任务将在项目目录下生成一个压缩包，压缩包以项目名命名。</p>
+<h3 id="更多功能介绍">更多功能介绍</h3><p><strong>JavaScript 合并</strong></p>
+<p>在 HTML 中，使用注释的方式前面包含起来即可。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- build:js ../js/lib.js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../js/kalok.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../js/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- endbuild --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上代码，在打包的时候，会将 kalok.js 与 main.js 合并压缩为 lib.js，并替换 html 中的引用。</p>
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot" id="footer">
+    <ul class="links ft">
+        <li class="links_item no_extra">
+            <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">服务协议</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">运营规范</a>
+        </li>
+        <li class="links_item">
+            <a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+        </li>
+        <li class="links_item">
+            <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=40012345&amp;f=1&amp;ty=1&amp;ap=000011:400792:|m:12|f:400792:m:12" target="_blank">在线客服</a>
+        </li>
+        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+        <li class="links_item"><a href="/cgi-bin/readtemplate?t=home/infringement_tmpl&amp;lang=zh_CN" target="_blank">侵权投诉</a>
+        </li>
+        <li class="links_item"><p class="copyright">Copyright © 2012-2015 Tencent. All Rights Reserved.</p></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ date: "2014-03-16 18:17:16"
 
 WxMoment 是由微信朋友圈广告团队面向广告详情页开发者提供的一个 JavaScript 库。通过使用 WxMoment，开发者可以简单的实现详情页中的常见功能，例如：微信分享、横屏提示、网页统计等。
 
-前往 Github 查看 [WxMoment Example](https://github.com/TmT/WxMoment/tree/master/example)。
+前往 Github 查看 [WxMoment Example](https://github.com/wxc-team/WxMoment/tree/master/example)。
 
 ### 引用脚本
 
@@ -12,9 +12,9 @@ WxMoment 是由微信朋友圈广告团队面向广告详情页开发者提供�
 最后更新：2015-07-24
 
 ```
-<script src="//cdnjs.gtimg.com/cdnjs/libs/wxmoment/0.0.3/wxmoment.min.js"></script>
+<script src="//wximg.qq.com/wxp/libs/wxmoment/0.0.3/wxmoment.min.js"></script>
 ```
-最新的脚本地址及文件将会在 [Github 库](https://github.com/TmT/WxMoment) 中更新。
+最新的脚本地址及文件将会在 [Github 库](https://github.com/wxc-team/WxMoment) 中更新。
 
 
 ### 数据统计
@@ -117,16 +117,15 @@ loader.start();
 var pageSlider = new WxMoment.PageSlider({
     pages: $('.screen')
 });
+
+//可用接口
+pageSlider.prev() //上一屏
+pageSlider.next() //下一屏
+pageSlider.moveTo(n) //跳转到第 n 屏，有缓动效果
+pageSlider.moveTo(n, true) //直接跳到第 n 屏，没有缓动效果
 ```
 
-**可用接口**
 
-```javascript
-prev() //上一屏
-next() //下一屏
-moveTo(n) //跳转到第 n 屏，有缓动效果
-moveTo(n, true) //直接跳到第 n 屏，没有缓动效果
-```
 
 **可用参数**
 ```javascript

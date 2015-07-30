@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=renderer content=webkit>
+    
+    <title>自定义详情页前端通用库 | 微信朋友圈广告规范</title>
+    
+    <meta name="author" content="WXG_OPB_Design">
+    
+    
+    <meta name="description"
+          content="WxMoment 是由微信朋友圈广告团队面向广告详情页开发者提供的一个 JavaScript 库。通过使用 WxMoment，开发者可以简单的实现详情页中的常见功能，例如：微信分享、横屏提示、网页统计等。
+前往 Github 查看 WxMoment Example。
+引用脚本当前版本：0.0.3最后">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta property="og:title" content="自定义详情页前端通用库"/>
+    
+    <meta property="og:site_name" content="微信朋友圈广告规范"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <meta http-equiv="Expires" contect="Thu Jul 30 2015 10:54:50 GMT+0800">
+    <meta http-equiv="Pragma" contect="no-cache">
+</head>
+<body>
+<div class="head" id="header">
+    <div class="head_box">
+        <div class="inner wrp">
+            <div class="logo"><a href="https://mp.weixin.qq.com/" target="_blank" title="微信公众平台"></a></div>
+        </div>
+    </div>
+</div>
+<div id="body" class="body page_news ">
+    <div class="container_box side_l cell_layout">
+        <div class="container_hd">
+            <h2>微信朋友圈广告规范</h2>
+        </div>
+        <div class="container_bd">
+            <div class="col_side">
+                <div class="menu_primary_box" id="myMenu">
+                    <ul>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="朋友圈推广案例" href="./case.html"><strong>朋友圈推广案例</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="视觉交互规范" href="./ue.html"><strong>视觉交互规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="模版详情页规范" href="./template.html"><strong>模版详情页规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页技术规范" href="./dev.html"><strong>自定义详情页技术规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页前端工作流" href="./workflow.html"><strong>自定义详情页前端工作流</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item selected ">
+                            <a class="menu_primary_link" title="自定义详情页前端通用库" href="./WxMoment.html"><strong>自定义详情页前端通用库</strong> </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col_main">
+                <div class="inner">
+                    <div class="yue">
+    <h1 class="page-title">自定义详情页前端通用库</h1>
+    <p>WxMoment 是由微信朋友圈广告团队面向广告详情页开发者提供的一个 JavaScript 库。通过使用 WxMoment，开发者可以简单的实现详情页中的常见功能，例如：微信分享、横屏提示、网页统计等。</p>
+<p>前往 Github 查看 <a href="https://github.com/wxc-team/WxMoment/tree/master/example" target="_blank" rel="external">WxMoment Example</a>。</p>
+<h3 id="引用脚本">引用脚本</h3><p>当前版本：0.0.3<br>最后更新：2015-07-24</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;script src=&#34;//wximg.qq.com/wxp/libs/wxmoment/0.0.3/wxmoment.min.js&#34;&#62;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
+<p>最新的脚本地址及文件将会在 <a href="https://github.com/wxc-team/WxMoment" target="_blank" rel="external">Github 库</a> 中更新。</p>
+<h3 id="数据统计">数据统计</h3><p>开发者使用数据统计功能前，请与商务团队提前确认统计监测点及统计的项目别名（例如：20150504WXMOMENT）</p>
+<p><strong>注意：网页统计需要部署到腾讯服务器才可正常上报统计数据</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> wa = <span class="keyword">new</span> WxMoment.Analytics(&#123;</span><br><span class="line">    <span class="comment">//projectName 请与微信商务团队确认</span></span><br><span class="line">    projectName: <span class="string">"20150504WXMOMENT"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>支持自定义事件统计，例如预约按钮的点击事件、视频的播放事件等。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'#button01'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//两个必填参数，分别为: 事件分类、事件名称</span></span><br><span class="line">    wa.sendEvent(<span class="string">'click'</span>, <span class="string">'button01'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="横屏提示">横屏提示</h3><p>若不支持横屏或横屏下体验不佳，请添加横屏提示。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> WxMoment.OrientationTip();</span><br></pre></td></tr></table></figure>
+<p>注：开启后，PC 等大屏幕设备打开时，会显示移动版尺寸预览并提供页面二维码展示</p>
+<h3 id="资源预加载">资源预加载</h3><p>当图片较多时，对于页面的打开速度和后续的体验都非常影响，所以，我们通常让资源提前加载，即有一个 <code>loading</code> 的过程，当资源加载好以后再进入实际页面。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> basePath = <span class="string">"http://wximg.gtimg.com/some/path/"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loader = <span class="keyword">new</span> WxMoment.Loader();</span><br><span class="line"></span><br><span class="line"><span class="comment">//声明资源文件列表</span></span><br><span class="line"><span class="keyword">var</span> fileList = [<span class="string">'img/1.png'</span>, <span class="string">'img/2.png'</span>, <span class="string">'img/3.png'</span>, <span class="string">'img/4.png'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fileList.length; i++) &#123;</span><br><span class="line">    loader.addImage(basePath + fileList[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进度监听</span></span><br><span class="line">loader.addProgressListener(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> percent = <span class="built_in">Math</span>.round((e.completedCount / e.totalCount) * <span class="number">100</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"当前加载了"</span>, percent, <span class="string">"%"</span>);</span><br><span class="line">    <span class="comment">//在这里做 Loading 页面中百分比的显示</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载完成</span></span><br><span class="line">loader.addCompletionListener(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//可以在这里隐藏 Loading 页面开始进入主内容页面</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//启动加载</span></span><br><span class="line">loader.start();</span><br></pre></td></tr></table></figure>
+<h3 id="滑屏组件">滑屏组件</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">        <span class="tag">html</span>, <span class="tag">body</span> <span class="rules">&#123;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;<span class="rule"><span class="attribute">-webkit-box-sizing</span>:<span class="value"> border-box</span></span>;<span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;<span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;&#125;</span></span><br><span class="line">        <span class="class">.wrap</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;<span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;&#125;</span></span><br><span class="line">        <span class="class">.screen</span><span class="rules">&#123;<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;<span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;<span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;<span class="rule"><span class="attribute">-webkit-backface-visibility</span>:<span class="value"> hidden</span></span>;<span class="rule"><span class="attribute">-webkit-perspective</span>:<span class="value"> <span class="number">1000</span></span></span>;&#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"wrap"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"screen screen1"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"screen-arrow"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"screen screen2"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"screen-arrow"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"screen screen3"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"screen-arrow"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>脚本调用</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageSlider = <span class="keyword">new</span> WxMoment.PageSlider(&#123;</span><br><span class="line">    pages: $(<span class="string">'.screen'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//可用接口</span></span><br><span class="line">pageSlider.prev() <span class="comment">//上一屏</span></span><br><span class="line">pageSlider.next() <span class="comment">//下一屏</span></span><br><span class="line">pageSlider.moveTo(n) <span class="comment">//跳转到第 n 屏，有缓动效果</span></span><br><span class="line">pageSlider.moveTo(n, <span class="literal">true</span>) <span class="comment">//直接跳到第 n 屏，没有缓动效果</span></span><br></pre></td></tr></table></figure>
+<p><strong>可用参数</strong><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageSlider = <span class="keyword">new</span> WxMoment.PageSlider(&#123;</span><br><span class="line">    pages: $(<span class="string">'.screen'</span>),            <span class="comment">//必需，需要切换的所有屏</span></span><br><span class="line">    direction: <span class="string">'vertical'</span>,          <span class="comment">//可选，vertical 或 v 为上下滑动，horizontal 或 h 为左右滑动，默认为 vertical</span></span><br><span class="line">    currentClass: <span class="string">'current'</span>,        <span class="comment">//可选, 当前屏的class (方便实现内容的进场动画)，默认值为 'current'</span></span><br><span class="line">    rememberLastVisited: <span class="literal">true</span>,      <span class="comment">//可选，记住上一次访问结束后的索引值，可用于实现页面返回后是否回到上次访问的页面</span></span><br><span class="line">    animationPlayOnce: <span class="literal">false</span>        <span class="comment">//可选，切换页面时，动画只执行一次</span></span><br><span class="line">    oninit: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,         <span class="comment">//可选，初始化完成时的回调</span></span><br><span class="line">    onbeforechange: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;, <span class="comment">//可选，开始切换前的回调</span></span><br><span class="line">    onchange: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,       <span class="comment">//可选，每一屏切换完成时的回调</span></span><br><span class="line">    onSwipeUp: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,      <span class="comment">//可选，swipeUp 回调</span></span><br><span class="line">    onSwipeDown: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,    <span class="comment">//可选，swipeDown 回调</span></span><br><span class="line">    onSwipeLeft: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,    <span class="comment">//可选，swipeLeft 回调</span></span><br><span class="line">    onSwipeRight: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;    <span class="comment">//可选，swipeRight 回调</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>禁用滑屏</strong><br>有时候需要锁定屏幕，不响应用户的滑动事件，需要点击某按钮或完成某些操作后再开启滑屏。<br>如下：第二屏在第一次上滑时锁住，第二次上滑时再滑动：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span><br><span class="line">data-lock-next： 禁止往后滑</span><br><span class="line">data-lock-prev： 禁止往前滑</span><br><span class="line">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">section</span> <span class="attribute">class</span>=<span class="value">"screen screen2"</span> <span class="attribute">data-lock-next</span>=<span class="value">"true"</span>&gt;</span><span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageSlider = <span class="keyword">new</span> WxMoment.PageSlider(&#123;</span><br><span class="line">    pages: $(<span class="string">'.screen'</span>),</span><br><span class="line">    onSwipeUp: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//所以回调接口的 this 均指向 pageSlider 实例</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.index === <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="comment">//做你想做的操作.....</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//最后取消禁止</span></span><br><span class="line">            $(<span class="keyword">this</span>.pages[<span class="keyword">this</span>.index]).data(<span class="string">'lock-next'</span>, <span class="literal">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>记住最后浏览的页面索引</strong><br>当页面跳走返回时，希望能直接返回到上次跳走的页面，只需设置：<code>rememberLastVisited: true</code>，<br>即会保存当前页面索引到 <code>localstorage</code>，当返回时即可方便操作，如下：<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageSlider = <span class="keyword">new</span> WxMoment.PageSlider(&#123;</span><br><span class="line">    pages: $(<span class="string">'.screen'</span>),</span><br><span class="line">    rememberLastVisited: <span class="literal">true</span>,</span><br><span class="line">    oninit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//返回时，需告诉我们此时为返回动作而不是刷新，可以通过 hash 告诉我们</span></span><br><span class="line">        <span class="comment">//PageSlider 所有回调接口 this 指向 PageSlider，方便进行操作</span></span><br><span class="line">        <span class="keyword">if</span>(返回为 <span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.moveTo(<span class="keyword">this</span>.lastVisitedIndex, <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="微信分享">微信分享</h3><p>新版 Weixin JS SDK 的分享接口需要绑定域名，并通过 access_token 获取 jsapi_ticket，由于获取 jsapi_ticket 的 API 调用次数非常有限，频繁刷新 jsapi_ticket 会导致 API 调用受限，影响自身业务。</p>
+<p>详情页最终会部署到腾讯服务器 <code>wximg.qq.com</code> 域名下，允许继续使用 WeixinJSBridge 调用分享接口。</p>
+<p><strong>注意：此微信分享实现方式要求部署到腾讯服务器后方可正常使用</strong></p>
+<p>在 HEAD 中加入以下代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"wxm:timeline_title"</span> <span class="attribute">content</span>=<span class="value">"分享到朋友圈的标题"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"wxm:appmessage_title"</span> <span class="attribute">content</span>=<span class="value">"分享给好友的标题"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"wxm:appmessage_desc"</span> <span class="attribute">content</span>=<span class="value">"分享给好友的详情"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 分享缩略图，必须为绝对路径--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"wxm:img_url"</span> <span class="attribute">content</span>=<span class="value">"http://wximg.gtimg.com/tmt/_demo/wxmoment/img/thumb.jpg"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 分享链接--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"wxm:link"</span> <span class="attribute">content</span>=<span class="value">"http://wximg.gtimg.com/tmt/_demo/wxmoment/share.html"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在 JS 中初始化分享组件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> share = <span class="keyword">new</span> WxMoment.Share();</span><br></pre></td></tr></table></figure>
+<p>一些特定需求下，需要动态修改分享的内容，更多参数请查看 example</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">share.set(<span class="string">'appmessage'</span>, <span class="string">'title'</span>, <span class="string">"使用 set 函数重新设置标题"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="腾讯视频">腾讯视频</h3><p>在腾讯视频上传视频后，可以获取到这样的视频地址 <code>http://v.qq.com/boke/page/i/0/o/b001672wkoe.html</code>，其中 <code>b001672wkoe</code> 即视频的 vid。</p>
+<p>代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--初始化 WxMoment.Video 后，默认注入视频相关 DOM 到 ID 为 WxmomentVideo 的元素中，视频宽高在此设置--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"WxMomentVideo"</span> <span class="attribute">style</span>=<span class="value">"width: 320px; height: 320px;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> video = <span class="keyword">new</span> WxMoment.Video(&#123;</span><br><span class="line">    <span class="comment">//请联系接口人确认视频清晰度已调至高清版本</span></span><br><span class="line">    <span class="comment">//如果要定制“播放按钮”的样式，请使用 CSS 覆盖 .tvp_overlay_play 和 .tvp_button_play 即可</span></span><br><span class="line"></span><br><span class="line">    vid: <span class="string">"a0016gys8ct"</span>, <span class="comment">//视频 vid 取自视频地址：http://v.qq.com/page/a/t/t/a0016gys8ct.html</span></span><br><span class="line">    pic: <span class="string">"http://wximg.gtimg.com/tmt/_demo/wxmoment/img/video-thumb.jpg"</span>, <span class="comment">//设置视频默认缩略图</span></span><br><span class="line">    oninited: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//播放器在视频载入完毕触发</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onplaying: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//播放器真正开始播放视频第一帧画面时</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onpause: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//播放器触发暂停时，目前只针对HTML5播放器有效</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onresume: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//暂停后继续播放时触发</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onallended: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//播放器播放完毕时</span></span><br><span class="line">    &#125;,</span><br><span class="line">    onfullscreen: <span class="function"><span class="keyword">function</span> (<span class="params">isfull</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//onfullscreen(isfull) 播放器触发全屏/非全屏时，参数isfull表示当前是否是全屏</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过以下方式控制播放/暂停</span></span><br><span class="line"><span class="comment">//video.getPlayer().play();</span></span><br><span class="line"><span class="comment">//video.getPlayer().pause();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//以下可以拉起iOS全屏播放</span></span><br><span class="line"><span class="comment">//video.getPlayer().enterFullScreen();</span></span><br></pre></td></tr></table></figure>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot" id="footer">
+    <ul class="links ft">
+        <li class="links_item no_extra">
+            <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">服务协议</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">运营规范</a>
+        </li>
+        <li class="links_item">
+            <a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+        </li>
+        <li class="links_item">
+            <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=40012345&amp;f=1&amp;ty=1&amp;ap=000011:400792:|m:12|f:400792:m:12" target="_blank">在线客服</a>
+        </li>
+        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+        <li class="links_item"><a href="/cgi-bin/readtemplate?t=home/infringement_tmpl&amp;lang=zh_CN" target="_blank">侵权投诉</a>
+        </li>
+        <li class="links_item"><p class="copyright">Copyright © 2012-2015 Tencent. All Rights Reserved.</p></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+</body>
+</html>

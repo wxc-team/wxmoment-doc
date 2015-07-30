@@ -13,7 +13,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://wximg.qq.com
-root: /tmt/wxmoment
+root: ./
 permalink: :title/
 permalink_defaults:
 
@@ -63,5 +63,5 @@ theme: mp
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: http://git.oa.com/tmt/wxmoment-doc.git
+  repo: https://github.com/wxc-team/wxmoment-doc.git
   branch: public

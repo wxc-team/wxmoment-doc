@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=renderer content=webkit>
+    
+    <title>自定义详情页技术规范 | 微信朋友圈广告规范</title>
+    
+    <meta name="author" content="WXG_OPB_Design">
+    
+    
+    <meta name="description"
+          content="兼容目标
+主流移动设备：iPad 2+，iPhone 4+ ，三星、魅族、华为、红米、小米1S 以上及主流 Android 千元机型；
+操作系统：iOS 7.0+ 与 Android 4.0+；
+
+加载速度、请求数与资源压缩
+以 3G 网络环境 100kb/s 的网络速度计算，详情页首次加载过程中，">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta property="og:title" content="自定义详情页技术规范"/>
+    
+    <meta property="og:site_name" content="微信朋友圈广告规范"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <meta http-equiv="Expires" contect="Thu Jul 30 2015 10:54:50 GMT+0800">
+    <meta http-equiv="Pragma" contect="no-cache">
+</head>
+<body>
+<div class="head" id="header">
+    <div class="head_box">
+        <div class="inner wrp">
+            <div class="logo"><a href="https://mp.weixin.qq.com/" target="_blank" title="微信公众平台"></a></div>
+        </div>
+    </div>
+</div>
+<div id="body" class="body page_news ">
+    <div class="container_box side_l cell_layout">
+        <div class="container_hd">
+            <h2>微信朋友圈广告规范</h2>
+        </div>
+        <div class="container_bd">
+            <div class="col_side">
+                <div class="menu_primary_box" id="myMenu">
+                    <ul>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="朋友圈推广案例" href="./case.html"><strong>朋友圈推广案例</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="视觉交互规范" href="./ue.html"><strong>视觉交互规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="模版详情页规范" href="./template.html"><strong>模版详情页规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item selected ">
+                            <a class="menu_primary_link" title="自定义详情页技术规范" href="./dev.html"><strong>自定义详情页技术规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页前端工作流" href="./workflow.html"><strong>自定义详情页前端工作流</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link" title="自定义详情页前端通用库" href="./WxMoment.html"><strong>自定义详情页前端通用库</strong> </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col_main">
+                <div class="inner">
+                    <div class="yue">
+    <h1 class="page-title">自定义详情页技术规范</h1>
+    <h3 id="兼容目标">兼容目标</h3><ul>
+<li>主流移动设备：iPad 2+，iPhone 4+ ，三星、魅族、华为、红米、小米1S 以上及主流 Android 千元机型；</li>
+<li>操作系统：iOS 7.0+ 与 Android 4.0+；</li>
+</ul>
+<h3 id="加载速度、请求数与资源压缩">加载速度、请求数与资源压缩</h3><ul>
+<li>以 3G 网络环境 100kb/s 的网络速度计算，详情页首次加载过程中，可以在 <strong>2s</strong> 内看到 Loading 页面；</li>
+<li>原则上页面中不超过 1 个的样式文件请求、2 个的脚本文件网络请求；</li>
+<li>图片资源应当进行压缩，JPG 图片使用 80% 以下质量，PNG 图片使用 <a href="http://tinypng.com" target="_blank" rel="external">TinyPNG</a> 进行压缩；</li>
+<li>详情页平均单页资源不超过 300 KB，总资源包大小不超过页数乘以300KB（不包括视频资源）；</li>
+<li>应当对小图片进行 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/CSS_Image_Sprites" target="_blank" rel="external">CSS 雪碧图</a> 合并，因低版本系统及低端设备渲染问题，单张图片尺寸不超过 2000x2000 像素，超过时需切分成多张雪碧图；</li>
+</ul>
+<p><strong>资源文件格式标准</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件类似</th>
+<th style="text-align:left">格式</th>
+<th style="text-align:left">大小</th>
+<th style="text-align:left">其它备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">背景音乐</td>
+<td style="text-align:left">mp3</td>
+<td style="text-align:left">小于 80 KB</td>
+<td style="text-align:left">开头和结尾音轨建议做使用淡入淡出处理</td>
+</tr>
+<tr>
+<td style="text-align:left">分享缩略图</td>
+<td style="text-align:left">jpg</td>
+<td style="text-align:left">小于 6 KB</td>
+<td style="text-align:left">尺寸为 120x120 像素</td>
+</tr>
+<tr>
+<td style="text-align:left">视频文件</td>
+<td style="text-align:left">mov/mp4/avi</td>
+<td style="text-align:left">暂无要求</td>
+<td style="text-align:left">分辨率&gt;=960×540，视频码率&gt;=1500kbps，画面比例 4:3或16:9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="资源部署">资源部署</h3><ul>
+<li>详情页应只包含静态文件资源，涉及数据交互使用 AJAX 进行数据提交；</li>
+<li>详情页所有资源上线前将部署到腾讯服务器；</li>
+<li>不允许在页面中添加非腾讯域名的资源；</li>
+<li>若页面中包括视频，自行上传视频至腾讯视频服务器，告知视频地址；</li>
+</ul>
+<h3 id="自测与提测申请">自测与提测申请</h3><ul>
+<li>至少提前 <strong>5 个工作日</strong> 提供到微信侧；</li>
+<li>提交微信团队测试前，请做好自测，并填写自测列表（<a href="http://mp.weixin.qq.com/promotion/res/standard/files/test.xls" target="_blank" rel="external">下载自测列表</a>）；</li>
+<li>微信广告测试团队将会进行全面测试，发现问题后反馈给广告客户进行优化修复，直至详情页质量符合要求；</li>
+</ul>
+<p><strong>提测申请及部署申请邮件内容</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">内容</th>
+<th style="text-align:left">要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">基本信息</td>
+<td style="text-align:left">公众号名称、微信号、AppID、原始ID</td>
+</tr>
+<tr>
+<td style="text-align:left">需求文档</td>
+<td style="text-align:left">包括功能点列表和说明，产品流程图</td>
+</tr>
+<tr>
+<td style="text-align:left">修改说明</td>
+<td style="text-align:left">非首次提交时，需要详细说明本次提测修复的缺陷以及修复方案</td>
+</tr>
+<tr>
+<td style="text-align:left">自测报告</td>
+<td style="text-align:left">报告需包含主流移动设备、主流操作系统中的测试情况，以及填写好的自测列表</td>
+</tr>
+<tr>
+<td style="text-align:left">源代码压缩包</td>
+<td style="text-align:left">以 ZIP 格式压缩（不得包含空文件，.svn/.git/.DS_Store/Thumbs.db/.log 等系统文件）。</td>
+</tr>
+<tr>
+<td style="text-align:left">广告详情页地址</td>
+<td style="text-align:left">若使用了微信授权登录，为方便测试，提供无需微信登录也可进行测试的地址</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot" id="footer">
+    <ul class="links ft">
+        <li class="links_item no_extra">
+            <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">服务协议</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">运营规范</a>
+        </li>
+        <li class="links_item">
+            <a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+        </li>
+        <li class="links_item">
+            <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=40012345&amp;f=1&amp;ty=1&amp;ap=000011:400792:|m:12|f:400792:m:12" target="_blank">在线客服</a>
+        </li>
+        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+        <li class="links_item"><a href="/cgi-bin/readtemplate?t=home/infringement_tmpl&amp;lang=zh_CN" target="_blank">侵权投诉</a>
+        </li>
+        <li class="links_item"><p class="copyright">Copyright © 2012-2015 Tencent. All Rights Reserved.</p></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+</body>
+</html>
