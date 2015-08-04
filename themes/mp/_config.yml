@@ -14,9 +14,13 @@ sidebar:
   Workflow:
     name: "自定义详情页前端工作流"
     url: "workflow"
+    url2: "workflow-simple"
   WxMoment:
     name: "自定义详情页前端通用库"
     url: "WxMoment"
+  faq:
+    name: "常见问题答疑"
+    url: "faq"
 
 
 less:

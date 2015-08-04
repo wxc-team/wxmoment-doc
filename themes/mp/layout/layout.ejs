@@ -17,7 +17,7 @@
                 <div class="menu_primary_box" id="myMenu">
                     <ul>
                         <% _.forEach(theme.sidebar, function(item){ %>
-                        <li class="menu_primary_item<%- config.root + item.url +".html" === config.root+path ? " selected" : "" %> <%= item.class || "" %>">
+                        <li class="menu_primary_item<%- ((config.root + item.url +".html" === config.root+path) || (item.url2 && (config.root + item.url2 +".html" === config.root+path))) ? " selected" : "" %> <%= item.class || "" %>">
                             <a class="menu_primary_link" title="<%-item.name%>" href="<%-config.root%><%-item.url%>.html"><strong><%-item.name%></strong> </a>
                         </li>
                         <%})%>

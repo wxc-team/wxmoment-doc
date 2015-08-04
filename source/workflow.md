@@ -4,13 +4,14 @@ date: "2014-03-16 18:17:16"
 
 WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详情页开发者提供的工作流。工作流集成了详情页开发中的常见任务，可以简化开发工作，并在打包环节对资源进行压缩合并优化。
 
-> 工作流包含了批处理文件，Windows 用户可直接双击执行。Mac 用户可以执行相应的命令。
+> 工作流适用于拥有NodeJs开发经验的前端开发者，其他开发者请参照[简易开发说明](./workflow-simple.html)进行开发。
+> 工作流中的执行命令，Windows用户请用管理员身份打开cmd，并cd到项目目录。Mac用户若执行命令失败请在命令前加sudo。
 
 ### 下载安装
 
-前往 [NodeJS 官网](https://nodejs.org/) 下载安装包并按指南安装 NodeJS，安装完成后请下载最新的 [工作流压缩包](https://github.com/TmT/WxMoment-Workflow/releases) 并解压。
+前往 [NodeJS 官网](https://nodejs.org/) 下载安装包并按指南安装 NodeJS，安装完成后请下载最新的 [工作流压缩包](https://github.com/wxc-team/WxMoment-Workflow/releases) 并解压。
 
-双击工作流目录中的 `安装.bat` 文件（windows用户请右键使用管理员身份打开）即可开始安装依赖，若出现问题建议直接在命令行执行以下命令（windows用户管理员身份打开cmd，mac用户请加sodu）：
+执行以下命令：
 
 ```bash
 $ cd WxMoment-Workflow
@@ -21,6 +22,8 @@ $ npm install --registry=https://r.cnpmjs.org
 ### 目录说明
 
 所有的开发都在 `src` 目录下进行，你只需要按约定好的放置相应文件，并按自己的项目需求编写代码即可。
+
+> 注意无论是否使用雪碧图，都请务必使用less来进行css的开发。
 
 ```text
 ├── package.json
@@ -33,7 +36,7 @@ $ npm install --registry=https://r.cnpmjs.org
         │   └── style-promo.less
         ├── html                     //HTML目录
         │   └── index.html            
-        ├── img                      //图片目录 
+        ├── img                      //图片目录
         └── slice                    //雪碧图目录，此目录下的图片会进行合并，同名的 @2x 图片会被识别并进行合并
 ```
 
@@ -49,7 +52,7 @@ $ npm install --registry=https://r.cnpmjs.org
 
 **开发任务**
 
-执行 `开发.bat` 开始执行任务，或执行命令：
+执行以下命令：
 
 ```bash
 $ cd WxMoment-Workflow/project
@@ -60,7 +63,7 @@ $ gulp build_dev
 
 **打包任务**
 
-开发完成后，执行 `打包.bat`，或执行命令：
+开发完成后，执行以下命令：
 
 ```bash
 $ cd WxMoment-Workflow/project
@@ -82,3 +85,8 @@ $ gulp zip
 <!-- endbuild -->
 ```
 以上代码，在打包的时候，会将 kalok.js 与 main.js 合并压缩为 lib.js，并替换 html 中的引用。
+
+
+### 简易开发说明
+
+若使用该项工作流感觉问题较多或较为麻烦，请前往[简易开发说明](./workflow-simple.html)。
