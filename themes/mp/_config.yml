@@ -1,26 +1,50 @@
 sidebar:
-  case:
-    name: "朋友圈推广案例"
-    url: "case"
+  outside:
+    name: "外层方案规范"
+    sub:
+      text:
+        name: "文案规范"
+        url: "1.1"
+      image:
+        name: "图片规范"
+        url: "1.2"
   ue:
-    name: "视觉交互规范"
-    url: "ue"
-  template:
-    name: "模版详情页规范"
-    url: "template"
-  dev:
-    name: "自定义详情页技术规范"
-    url: "dev"
-  Workflow:
-    name: "自定义详情页前端工作流"
-    url: "workflow"
-    url2: "workflow-simple"
-  WxMoment:
-    name: "自定义详情页前端通用库"
-    url: "WxMoment"
+    name: "详情页视觉交互规范"
+    sub:
+      common:
+        name: "通用规范"
+        url: "2.1"
+      page:
+        name: "公众号文章规范"
+        url: "2.2"
+      outside:
+        name: "模版详情页规范"
+        url: "2.3"
+      share:
+        name: "分享规范"
+        url: "2.4"
+      link:
+        name: "外链规范"
+        url: "2.5"
+  development:
+    name: "开发规范"
+    sub:
+      common:
+        name: "通用规范"
+        url: "3.1"
+      workflow:
+        name: "前端工作流"
+        url: "3.2"
+        url2: "workflow-simple"
+      wxmoment:
+        name: "通用库"
+        url: "3.3"
+      test:
+        name: "测试要求"
+        url: "3.4"
   faq:
     name: "常见问题答疑"
-    url: "faq"
+    url: "4.1"
 
 
 less:
