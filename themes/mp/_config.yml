@@ -12,7 +12,7 @@ sidebar:
         name: "视频广告规范"
         url: "1.3"
   ue:
-    name: "详情页视觉交互规范"
+    name: "详情页设计规范"
     sub:
       common:
         name: "通用规范"
@@ -21,7 +21,7 @@ sidebar:
         name: "公众号文章规范"
         url: "2.2"
       outside:
-        name: "模版详情页规范"
+        name: "H5页面设计模版建议"
         url: "2.3"
       share:
         name: "分享规范"
@@ -29,6 +29,9 @@ sidebar:
       link:
         name: "外链规范"
         url: "2.5"
+      music:
+        name: "音乐规范"
+        url: "2.6"
   development:
     name: "开发规范"
     sub:
