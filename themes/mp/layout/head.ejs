@@ -40,6 +40,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
     <link rel="stylesheet" href="<%- config.root %>css/style.css" type="text/css">
+    <script src="<%- config.root %>js/zepto_modify.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        function isWeiXin(){
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        if(isWeiXin()){
+            document.title = "";
+        }
+        $(function(){
+            if(typeof window.ontouchstart === 'undefined'){
+                $(".container_hd-link").on("click",function (e) {
+                    $(".col_side").toggleClass("col_side_show");
+                })
+            } else{
+                $(".container_hd-link").on("tap",function (e) {
+                    $(".col_side").toggleClass("col_side_show");
+                })
+                $(".col_main").on("tap",function (e) {
+                    $(".col_side").removeClass("col_side_show");
+                })
+            }
+            $(".col_side").on("touchstart touchmove",function (e) {
+                e.stopPropagation();
+                $('body',"container_box",".yue",".inner",".col_main",".container_bd").bind('touchmove',function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                });
+            }).on("touchend",function (e) {
+                e.stopPropagation();
+                $('body',"container_box",".yue",".inner",".col_main",".container_bd").unbind('touchmove');
+            })
+        })
+
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+            alert("done1");
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    $(".inner img").tap(function () {
+                        var imgUrls = [];
+                        $(this).parents(".yue").find("img").each(function () {
+                            imgUrls.push($(this).attr("src"));
+                        });
+                        WeixinJSBridge.invoke('imagePreview', {
+                            current: $(this).attr("src"),
+                            urls: imgUrls
+                        }, function(res){
+                            alert(res.err_msg);
+                        });
+                    })
+                }, false);
+            } else if (document.attachEvent) {
+                document.attachEvent("WeixinJSBridgeReady", function () {});
+                document.attachEvent("onWeixinJSBridgeReady", function () {});
+            }
+        }
+
+    </script>
     <meta http-equiv="Expires" contect="<%- moment() %>">
     <meta http-equiv="Pragma" contect="no-cache">
 </head>
