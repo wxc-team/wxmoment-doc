@@ -5,14 +5,26 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   line-height: 1.6;
 }
-
+html,body{
+  width: 100%;
+  overflow-x: hidden;
+}
+.col_side::-webkit-scrollbar{
+  width: 0;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
 input,
 textarea,
 button,
 a {
   outline: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body,
@@ -156,7 +168,6 @@ body {
   color: #222222;
   font-size: 14px;
   background: #e7e8eb;
-  min-width: 1200px;
 }
 
 textarea,
@@ -250,11 +261,6 @@ textarea {
   max-width: 208px;
 }
 
-.container_box.cell_layout .col_main {
-  width: 2000px;
-  height: 650px;
-}
-
 .container_box.cell_layout .col_side {
   *float: left;
   *width: 208px;
@@ -306,7 +312,8 @@ textarea {
 }
 
 .body {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 36px 0 88px;
@@ -382,7 +389,13 @@ textarea {
 }
 
 .col_side {
-  background-color: #ffffff;
+  background-color: #fff;
+  min-width: 189px;
+}
+.container_box.cell_layout .col_side.col_side_show{
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
 }
 
 .col_side,
@@ -390,10 +403,6 @@ textarea {
   *padding-bottom: 9999em;
   *margin-bottom: -9999em;
   min-height: 1px;
-}
-
-.col_side_primary {
-  width: 208px;
 }
 
 .col_main_primary {
@@ -617,7 +626,7 @@ textarea {
 }
 
 .menu_title {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .menu_item:hover {
@@ -656,10 +665,6 @@ textarea {
 
 .menu_plugins .btn_plugins_add i {
   margin-right: 5px;
-}
-
-.menu_primary_box {
-  width: 208px;
 }
 
 .menu_primary_item {
@@ -804,19 +809,131 @@ textarea {
 }
 
 .head .inner.wrp {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .head_box {
   position: relative;
-  background-color: #ffffff;
+  background: #fff;
   border-top: 4px solid #44b549;
   border-bottom: 1px solid #d9dadc;
 }
 
 .col_main .inner {
-  margin: 20px auto;
-  width: 930px;
+  padding: 2.05% 5%;
 }
+.container_hd,
+.container_bd{
+  position: relative;
+}
+.container_hd-link{
+  display: none;
+  //position: absolute;
+  //right: 0;
+  //top: 0;
+  //width: 70px;
+  //height: 100%;
+  //&:after{
+  //  position: absolute;
+  //  content: '';
+  //  width: 20px;
+  //  height: 20px;
+  //  top: 14px;
+  //  right: 20px;
+  //  background: url("../images/icon_link.png");
+  //  background-size: 100% 100%;
+  //  -webkit-background-size: 100% 100%;
+  //}
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  bottom: 31px;
+  width: 42px;
+  height: 42px;
+  background: rgba(22,22,34,.25);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.container_hd-link-inner{
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  margin-left: -11px;
+  width: 21px;
+  height: 2px;
+  background: #fff;
+  &:before,&:after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: inherit;
+  }
+  &:before{
+    top: 7px;
+    left: 0;
+  }
+  &:after{
+    bottom: 7px;
+    left: 0;
+  }
+}
+
+@media (max-width: 875px){
+  #body{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #header{
+    display: none;
+  }
+  .container_hd{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    text-align: center;
+  }
+  .page_news .container_hd h2{
+    background: rgba(244, 245, 249, .95);
+  }
+  .container_bd{
+    margin-top: 52px;
+  }
+  .container_box.cell_layout .col_side{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    padding-top: 52px;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.1);
+    transform: translate3d(-200px,0,0);
+    -webkit-transform: translate3d(-200px,0,0);
+    -moz-transform: translate3d(-200px,0,0);
+    -webkit-overflow-scrolling: touch;
+    transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+  }
+  .container_hd-link{
+    display: block;
+  }
+  .container_box.cell_layout .col_main{
+    display: block;
+  }
+
+  //使左边菜单下面有可滚动的余地
+  .menu_primary_box{
+    padding-bottom: 60px;
+  }
+}
+
