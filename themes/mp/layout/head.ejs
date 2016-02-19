@@ -52,7 +52,7 @@
             }
         }
         if(isWeiXin()){
-            document.title = "";
+            document.title = "微信朋友圈广告规范";
         }
         $(function(){
             if(typeof window.ontouchstart === 'undefined'){
@@ -81,7 +81,7 @@
         })
 
         if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
-            alert("done1");
+            console.log("");
         } else {
             if (document.addEventListener) {
                 document.addEventListener("WeixinJSBridgeReady", function () {
@@ -94,7 +94,7 @@
                             current: $(this).attr("src"),
                             urls: imgUrls
                         }, function(res){
-                            alert(res.err_msg);
+                            console.log(res.err_msg);
                         });
                     })
                 }, false);
