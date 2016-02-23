@@ -67,16 +67,16 @@
                     $(".col_side").removeClass("col_side_show");
                 })
             }
-            $(".col_side").on("touchstart touchmove",function (e) {
-                e.stopPropagation();
-                $('body',"container_box",".yue",".inner",".col_main",".container_bd").bind('touchmove',function(e){
+            $(".col_side").on('touchstart', function(e) {
+                startY = e.touches[0].pageY;
+            }).on("touchmove", function (e) {
+                diffY = e.touches[0].pageY - startY;
+
+                //阻止目录滑时带动主体内容滑动
+                if((diffY>0 && $(this).scrollTop() == 0) || (diffY<0 && $(this)[0].scrollHeight == $(window).height()) || (diffY<0 && $(this).scrollTop()+$(window).height() == $(this)[0].scrollHeight)) {
                     e.preventDefault();
                     e.stopPropagation();
-                    return false;
-                });
-            }).on("touchend",function (e) {
-                e.stopPropagation();
-                $('body',"container_box",".yue",".inner",".col_main",".container_bd").unbind('touchmove');
+                }
             })
         })
 
