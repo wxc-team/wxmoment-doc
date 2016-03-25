@@ -3,35 +3,32 @@ sidebar:
     name: "外层方案规范"
     sub:
       text:
-        name: "文案规范"
+        name: "文案"
         url: "1.1"
       image:
-        name: "图片规范"
+        name: "图片"
         url: "1.2"
       video:
-        name: "视频广告规范"
+        name: "视频广告"
         url: "1.3"
   ue:
     name: "详情页设计规范"
     sub:
-      common:
-        name: "通用规范"
-        url: "2.1"
       page:
-        name: "公众号文章规范"
+        name: "公众号文章"
+        url: "2.1"
+      h5:
+        name: "自定义H5页面"
         url: "2.2"
       outside:
-        name: "应用下载模版规范"
+        name: "应用下载模版"
         url: "2.3"
       share:
-        name: "分享规范"
+        name: "分享"
         url: "2.4"
       link:
-        name: "外链规范"
+        name: "外链"
         url: "2.5"
-      music:
-        name: "音乐规范"
-        url: "2.6"
   development:
     name: "开发规范"
     sub:

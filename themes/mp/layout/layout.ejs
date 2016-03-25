@@ -22,14 +22,14 @@
                         <% _.forEach(theme.sidebar, function(item){ %>
                         <li class="menu_primary_item<%- ((config.root + item.url +".html" === config.root+path) || (item.url2 && (config.root + item.url2 +".html" === config.root+path))) ? " selected" : "" %> <%= item.class || "" %>">
                             <% if(item.url){ %>
-                            <a class="menu_primary_link" title="<%-item.name%>" href="<%-config.root%><%-item.url%>.html"><strong><%-item.name%></strong> </a>
+                            <a class="menu_primary_link" title="<%-item.name%>" href="<%-config.root%><%-item.url%>.html"><strong style="color: #222;"><%-item.name%></strong> </a>
                             <% }else{ %>
                             <a class="menu_primary_link" title="<%-item.name%>"><strong style="cursor: inherit;"><%-item.name%></strong> </a>
                             <% } %>
                         </li>
                         <% item.sub && _.forEach(item.sub, function(item2){ %>
                         <li class="menu_primary_item<%- ((config.root + item2.url +".html" === config.root+path) || (item2.url2 && (config.root + item2.url2 +".html" === config.root+path))) ? " selected" : "" %> <%= item2.class || "" %>">
-                            <a class="menu_primary_link" title="<%-item2.name%>" href="<%-config.root%><%-item2.url%>.html" style="margin-left: 30px;"><strong><%-item2.name%></strong> </a>
+                            <a class="menu_primary_link page_title_secondary" title="<%-item2.name%>" href="<%-config.root%><%-item2.url%>.html"><strong><%-item2.name%></strong> </a>
                         </li>
                         <%})%>
                         <%})%>

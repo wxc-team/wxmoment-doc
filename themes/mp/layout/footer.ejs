@@ -22,5 +22,84 @@
     </ul>
 </div>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+<script>
+    var windowHeight = $(window).height();
+    var $colSide = $(".col_side");
+    var $containerLink= $(".container_hd-link");
+
+    var standard = {
+        //判断是否是微信 WebView
+        isWeixin : function () {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        },
+
+        //显示/隐藏左侧菜单
+        navToggle : function () {
+            $colSide.toggleClass("col_side_show");
+        }
+    }
+    $(function(){
+        $(".page-title:empty").hide();
+
+        if(standard.isWeixin()){
+            document.title = "微信朋友圈广告规范";
+            console.log("asd");
+        }
+
+        if(typeof window.ontouchstart === 'undefined') {
+            $containerLink.on("click",standard.navToggle);
+        }
+        else {
+            $containerLink.on("tap",standard.navToggle);
+            $(".col_main").on("tap",function (e) {
+                $colSide.removeClass("col_side_show");
+            })
+        }
+
+        //阻止目录滑时带动主体内容滑动
+        $colSide
+                .on('touchstart', function(e) {
+                    startY = e.touches[0].pageY;
+                })
+                .on("touchmove", function (e) {
+                    diffY = e.touches[0].pageY - startY;
+
+                    if((diffY>0 && $(this).scrollTop() == 0)
+                                    || (diffY<0 && $(this).scrollTop()+windowHeight == $(this)[0].scrollHeight)) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                })
+
+        if (typeof WeixinJSBridge == "object"
+            && typeof WeixinJSBridge.invoke == "function") {
+            console.log("暂不处理图片预览");
+        }
+        else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    $(".inner img").tap(function () {
+                        var imgUrls = [];
+                        $(this).parents(".yue").find("img").each(function () {
+                            imgUrls.push($(this).attr("src"));
+                        });
+                        WeixinJSBridge.invoke('imagePreview', {
+                            current: $(this).attr("src"),
+                            urls: imgUrls
+                        }, function(res){
+                            console.log(res.err_msg);
+                        });
+                    })
+                }, false);
+            }
+        }
+    })
+</script>
 </body>
 </html>
