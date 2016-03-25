@@ -4,20 +4,18 @@ html {
 }
 
 body {
+  font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-size: 14px;
   line-height: 1.6;
+  color: #222;
+  background: #e7e8eb;
 }
 html,body{
   width: 100%;
   overflow-x: hidden;
-}
-.col_side::-webkit-scrollbar{
-  width: 0;
-  opacity: 0;
-  display: none;
-  visibility: hidden;
 }
 input,
 textarea,
@@ -162,14 +160,6 @@ select {
   -webkit-border-radius: 0;
 }
 
-body {
-  line-height: 1.6;
-  font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-  color: #222;
-  font-size: 14px;
-  background: #e7e8eb;
-}
-
 textarea,
 input {
   color: #222;
@@ -203,10 +193,9 @@ textarea {
 a {
   color: #459ae9;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button,
@@ -216,8 +205,17 @@ textarea {
   *font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "黑体", Arial, sans-serif;
 }
 
+img[alt=words] { width: 595px; }
+img[alt=pics] { width: 740px; }
+img[alt=pics-area] { width: 581px; }
+img[alt=video] { width: 579px; }
+img[alt=h5-pic] { width: 600px; }
+img[alt=download] { width: 600px; }
+img[alt=share-friend] { width: 758px; }
+img[alt=share-moments] { width: 762px; }
+
 .container_box {
-  min-height: 650px;
+  min-height: 644px;
 }
 
 .container_box.float_layout {
@@ -258,12 +256,8 @@ textarea {
 }
 
 .container_box.cell_layout .col_side {
-width: 220px;
-}
-
-.container_box.cell_layout .col_side {
+  width: 220px;
   *float: left;
-  *width: 220px;
   *padding-bottom: 9999em;
   *margin-bottom: -9999em;
 }
@@ -391,6 +385,12 @@ width: 220px;
 .col_side {
   background-color: #fff;
   min-width: 189px;
+}
+.col_side::-webkit-scrollbar{
+  width: 0;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
 }
 .container_box.cell_layout .col_side.col_side_show{
   transform: translate3d(0,0,0);
@@ -668,7 +668,13 @@ width: 220px;
 }
 
 .menu_primary_item {
-  line-height: 32px;
+  line-height: 34px;
+  cursor: default;
+  &:first-of-type{
+    .menu_primary_link{
+      border-top: none;
+    }
+  }
 }
 
 .menu_primary_item:hover {
@@ -677,16 +683,14 @@ width: 220px;
 
 .menu_primary_item.selected {
   background-color: #44b549;
+  strong{
+    color: #fff!important;
+  }
 }
 
 .menu_primary_item.selected .menu_primary_link {
   color: #fff;
 }
-
-.menu_primary_item.sub .menu_primary_link strong {
-  margin-left: 28px;
-}
-
 .menu_primary_link {
   display: block;
   color: #222;
@@ -699,7 +703,7 @@ width: 220px;
 .menu_primary_link strong {
   display: block;
   cursor: pointer;
-  margin: 0 2em;
+  margin: 0 20px;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -707,6 +711,7 @@ width: 220px;
   word-wrap: normal;
   font-weight: 400;
   font-style: normal;
+  color: #8d8d8d;
 }
 
 .links.tab_links {
@@ -799,6 +804,23 @@ width: 220px;
   margin-bottom: 0;
   text-align: center;
 }
+.h3_ban{
+  margin-top: 22px;
+  margin-bottom: 1.6em;
+  font-size: 18px;
+  line-height: 60px;
+  border-bottom: 1px solid #e7e7eb;
+  &::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: -1px;
+    margin-right: 8px;
+    background: url("http://wximg.qq.com/wxp/wxmoment-doc/images/ban.png");
+    background-size: 16px 16px;
+  }
+}
 
 .logo {
   float: left;
@@ -810,6 +832,7 @@ width: 220px;
   display: block;
   width: 248px;
   height: 40px;
+  margin-left: 16px;
   overflow: hidden;
   text-decoration: none;
   *background: transparent url(http://mp.weixin.qq.com/promotion/res/htmledition/images/bg/bg_logo201c57.png) 0 0 no-repeat;
@@ -922,12 +945,6 @@ width: 220px;
     display: none;
   }
   .container_hd{
-    //position: fixed;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    //z-index: 10000;
-    //text-align: center;
     display: none;
   }
   .page_news .container_hd h2{
@@ -962,13 +979,8 @@ width: 220px;
   .container_box.cell_layout .col_main{
     display: block;
   }
-  .menu_primary_link {
-    border-bottom: 1px solid rgba(243, 243, 243, 0.5);
-  }
-
   //使左边菜单下面有可滚动的余地
   .menu_primary_box{
     padding-bottom: 60px;
   }
 }
-
