@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=renderer content=webkit>
+    
+    <title>详情页开发规范/前端工作流 | 微信朋友圈广告规范</title>
+    
+    <meta name="author" content="WXG_OPB_Design">
+    
+    
+    <meta name="description"
+          content="WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详情页开发者提供的工作流。工作流集成了详情页开发中的常见任务，可以简化开发工作，并在打包环节对资源进行压缩合并优化。
+
+工作流适用于拥有NodeJs开发经验的前端开发者，其他开发者请参照 简易开发说明 或使用可视化工具">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta property="og:title" content="详情页开发规范/前端工作流"/>
+    
+    <meta property="og:site_name" content="微信朋友圈广告规范"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
+    <link rel="stylesheet" href="./css/style-index.css" type="text/css">
+    <script src="./js/zepto_modify.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta http-equiv="Expires" contect="Wed May 25 2016 17:13:27 GMT+0800">
+    <meta http-equiv="Pragma" contect="no-cache">
+</head>
+
+<body>
+<div class="head" id="header">
+    <div class="head_box">
+        <div class="inner wrp">
+            <div class="logo"><a href="https://mp.weixin.qq.com/" target="_blank" title="微信公众平台"></a></div>
+        </div>
+    </div>
+</div>
+<div id="body" class="body page_news ">
+    <span class="container_hd-link"><span class="container_hd-link-inner"></span></span>
+    <div class="container_box side_l cell_layout">
+        <div class="container_hd">
+            <h2>
+                微信朋友圈广告规范
+            </h2>
+        </div>
+        <div class="container_bd">
+            <div class="col_side">
+                <div class="menu_primary_box" id="myMenu">
+                    <ul>
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="外层方案规范"><strong style="cursor: inherit;">外层方案规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="文案" href="./1.1.html"><strong>文案</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="图片" href="./1.2.html"><strong>图片</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="视频广告" href="./1.3.html"><strong>视频广告</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="详情页设计规范"><strong style="cursor: inherit;">详情页设计规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="公众号文章" href="./2.1.html"><strong>公众号文章</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="自定义H5页面" href="./2.2.html"><strong>自定义H5页面</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="应用下载模版" href="./2.3.html"><strong>应用下载模版</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="分享" href="./2.4.html"><strong>分享</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="外链" href="./2.5.html"><strong>外链</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="开发规范"><strong style="cursor: inherit;">开发规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="通用规范" href="./3.1.html"><strong>通用规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item selected ">
+                            <a class="menu_primary_link page_title_secondary" title="前端工作流" href="./3.2.html"><strong>前端工作流</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="通用库" href="./3.3.html"><strong>通用库</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="测试要求" href="./3.4.html"><strong>测试要求</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="常见问题答疑" href="./4.1.html"><strong style="color: #222;">常见问题答疑</strong> </a>
+                            
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col_main">
+                <div class="inner">
+                    <div class="yue">
+    <h1 class="page-title">详情页开发规范/前端工作流</h1>
+    <p>WxMoment-Workflow 是由微信朋友圈广告团队基于 Gulp 面向广告详情页开发者提供的工作流。工作流集成了详情页开发中的常见任务，可以简化开发工作，并在打包环节对资源进行压缩合并优化。</p>
+<blockquote>
+<p>工作流适用于拥有NodeJs开发经验的前端开发者，其他开发者请参照 <a href="./workflow-simple.html">简易开发说明</a> 或使用可视化工具 <a href="http://whatifhappen.github.io/GulpUI-WX/" target="_blank" rel="external">Gulp UI</a> 进行开发。<br>工作流中的执行命令，Windows 用户请用管理员身份打开 cmd，并 cd 到项目目录。Mac用户若执行命令失败请在命令前加 sudo。</p>
+</blockquote>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>前往 <a href="https://nodejs.org/" target="_blank" rel="external">NodeJS 官网</a> 下载安装包并按指南安装 NodeJS，安装完成后请下载最新的 <a href="https://github.com/wxc-team/WxMoment-Workflow/releases" target="_blank" rel="external">工作流压缩包</a> 并解压。</p>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow</span><br><span class="line">$ npm install gulp -g --registry=https://r.cnpmjs.org</span><br><span class="line">$ npm install --registry=https://r.cnpmjs.org</span><br></pre></td></tr></table></figure>
+<h3 id="目录说明"><a href="#目录说明" class="headerlink" title="目录说明"></a>目录说明</h3><p>所有的开发都在 <code>src</code> 目录下进行，你只需要按约定好的放置相应文件，并按自己的项目需求编写代码即可。</p>
+<blockquote>
+<p>注意无论是否使用雪碧图，都请务必使用less来进行css的开发。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">├── package.json</span><br><span class="line">├── tasks                           //工作流任务配置（一般不需要修改）</span><br><span class="line">└── 20150514-promo-vivo             //示例项目，项目目录</span><br><span class="line">    ├── .tmtworkflowrc              //工作流的项目配置文件（一般不需要修改）</span><br><span class="line">    ├── gulpfile.js                 //工作流的任务配置文件（一般不需要修改）</span><br><span class="line">    └── src                         //源文件目录，所有的开发在此目录下进行</span><br><span class="line">        ├── css                     //样式表目录，使用 Less，只有 style-*.less 的文件名会被编译</span><br><span class="line">        │   └── style-promo.less</span><br><span class="line">        ├── html                     //HTML目录</span><br><span class="line">        │   └── index.html</span><br><span class="line">        ├── img                      //图片目录</span><br><span class="line">        └── slice                    //雪碧图目录，此目录下的图片会进行合并，同名的 @2x 图片会被识别并进行合并</span><br></pre></td></tr></table></figure>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>从 <code>20150514-promo-vivo</code> 复制一个文件夹，重命名为自己的项目。</p>
+<blockquote>
+<p>命名规则：YYYYMMDD-promo-品牌名称。<br>YYYYMMDD 为 4 位年份，2 位月份，2 位日期数字组成，品牌名称为全小写英文字母。</p>
+</blockquote>
+<h3 id="任务介绍"><a href="#任务介绍" class="headerlink" title="任务介绍"></a>任务介绍</h3><p><strong>开发任务</strong></p>
+<p>执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow/project</span><br><span class="line">$ gulp build_dev</span><br></pre></td></tr></table></figure>
+<p>此任务将启动一个 HTTP Server，并自动在浏览器打开 <code>http://localhost:8080/html/index.html</code> 这样的地址。</p>
+<p><strong>打包任务</strong></p>
+<p>开发完成后，执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> WxMoment-Workflow/project</span><br><span class="line">$ gulp zip</span><br></pre></td></tr></table></figure>
+<p>此任务将在项目目录下生成一个压缩包，压缩包以项目名命名。</p>
+<h3 id="更多功能介绍"><a href="#更多功能介绍" class="headerlink" title="更多功能介绍"></a>更多功能介绍</h3><p><strong>JavaScript 合并</strong></p>
+<p>在 HTML 中，使用注释的方式前面包含起来即可。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- build:js ../js/lib.js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/kalok.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"../js/main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- endbuild --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上代码，在打包的时候，会将 kalok.js 与 main.js 合并压缩为 lib.js，并替换 html 中的引用。</p>
+<h3 id="简易开发说明"><a href="#简易开发说明" class="headerlink" title="简易开发说明"></a>简易开发说明</h3><p>若使用该项工作流感觉问题较多或较为麻烦，请参照 <a href="./workflow-simple.html">简易开发说明</a> 或使用可视化工具 <a href="http://whatifhappen.github.io/GulpUI-WX/" target="_blank" rel="external">Gulp UI</a>。</p>
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot" id="footer">
+    <ul class="links ft">
+        <li class="links_item no_extra">
+            <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">服务协议</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">运营规范</a>
+        </li>
+        <li class="links_item">
+            <a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+        </li>
+        <li class="links_item">
+            <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=40012345&amp;f=1&amp;ty=1&amp;ap=000011:400792:|m:12|f:400792:m:12" target="_blank">在线客服</a>
+        </li>
+        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+        <li class="links_item"><a href="/cgi-bin/readtemplate?t=home/infringement_tmpl&amp;lang=zh_CN" target="_blank">侵权投诉</a>
+        </li>
+        <li class="links_item"><p class="copyright">Copyright © 2012-2015 Tencent. All Rights Reserved.</p></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+<script>
+    var windowHeight = $(window).height();
+    var $colSide = $(".col_side");
+    var $containerLink = $(".container_hd-link");
+    var $colMain = $(".col_main");
+
+    var standard = {
+        //判断是否是微信 WebView
+        isWeixin : function () {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        },
+
+        //显示/隐藏左侧菜单
+        navToggle : function () {
+            $colSide.toggleClass("col_side_show");
+        }
+    }
+    $(function(){
+        $(".page-title:empty").hide();
+
+        if(standard.isWeixin()){
+            document.title = "微信朋友圈广告规范";
+        }
+
+        if(typeof window.ontouchstart === 'undefined') {
+            $containerLink.on("click",standard.navToggle);
+            $colMain.on("click",function (e) {
+                $colSide.removeClass("col_side_show");
+            })
+        }
+        else {
+            $containerLink.on("tap",standard.navToggle);
+            $colMain.on("tap",function (e) {
+                if(e.target.tagName.toLowerCase()!= "img"){
+//                    console.log("点不到图片,侧边栏消失");
+                    $colSide.removeClass("col_side_show");
+                }
+            })
+        }
+
+        //阻止目录滑时带动主体内容滑动
+        $colSide
+                .on('touchstart', function(e) {
+                    startY = e.touches[0].pageY;
+                })
+                .on("touchmove", function (e) {
+                    diffY = e.touches[0].pageY - startY;
+
+                    if((diffY>0 && $(this).scrollTop() == 0)
+                                    || (diffY<0 && $(this).scrollTop()+windowHeight == $(this)[0].scrollHeight)) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                })
+
+        if (typeof WeixinJSBridge == "object"
+            && typeof WeixinJSBridge.invoke == "function") {
+//            console.log("暂不处理图片预览");
+        }
+        else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    $(".inner img").tap(function () {
+                        if(!$colSide.hasClass("col_side_show") && !$(this).hasClass("index-img")){
+//                            console.log("侧边栏没有show的类或者图片不是首页图");
+                            var imgUrls = [];
+                            $(this).parents(".yue").find("img").each(function () {
+                                imgUrls.push($(this).attr("src"));
+                            });
+                            WeixinJSBridge.invoke('imagePreview', {
+                                current: $(this).attr("src"),
+                                urls: imgUrls
+                            }, function(res){
+                                console.log(res.err_msg);
+                            });
+                        }else{
+//                            console.log("点到了图片,侧边栏现在消失");
+                            $colSide.removeClass("col_side_show");
+                        }
+                    })
+                }, false);
+            }
+        }
+    })
+</script>
+</body>
+</html>

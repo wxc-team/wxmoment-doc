@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name=renderer content=webkit>
+    
+    <title>自定义H5页面规范 | 微信朋友圈广告规范</title>
+    
+    <meta name="author" content="WXG_OPB_Design">
+    
+    
+    <meta name="description"
+          content="查看详情页也可支持自定义H5页面，用来展示更多内容。
+交互规范
+分屏切换，支持横向和竖向，滑动指引需清晰
+若详情页加载较慢，需设计loading页，给予用户友好的提示
+如有视频，需在底部加上“建议在Wi-Fi环境下播放”提示
+建议一个页面不超过两种以上交互操作
+
+设计规范
+页面尺寸建议：640像素×">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta property="og:title" content="自定义H5页面规范"/>
+    
+    <meta property="og:site_name" content="微信朋友圈广告规范"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="//res.wx.qq.com/mpres/htmledition/images/favicon.ico" rel="Shortcut Icon">
+    <link rel="stylesheet" href="./css/style-index.css" type="text/css">
+    <script src="./js/zepto_modify.js"></script>
+    <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <meta http-equiv="Expires" contect="Wed May 25 2016 17:13:27 GMT+0800">
+    <meta http-equiv="Pragma" contect="no-cache">
+</head>
+
+<body>
+<div class="head" id="header">
+    <div class="head_box">
+        <div class="inner wrp">
+            <div class="logo"><a href="https://mp.weixin.qq.com/" target="_blank" title="微信公众平台"></a></div>
+        </div>
+    </div>
+</div>
+<div id="body" class="body page_news ">
+    <span class="container_hd-link"><span class="container_hd-link-inner"></span></span>
+    <div class="container_box side_l cell_layout">
+        <div class="container_hd">
+            <h2>
+                微信朋友圈广告规范
+            </h2>
+        </div>
+        <div class="container_bd">
+            <div class="col_side">
+                <div class="menu_primary_box" id="myMenu">
+                    <ul>
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="外层方案规范"><strong style="cursor: inherit;">外层方案规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="文案" href="./1.1.html"><strong>文案</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="图片" href="./1.2.html"><strong>图片</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="视频广告" href="./1.3.html"><strong>视频广告</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="详情页设计规范"><strong style="cursor: inherit;">详情页设计规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="公众号文章" href="./2.1.html"><strong>公众号文章</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item selected ">
+                            <a class="menu_primary_link page_title_secondary" title="自定义H5页面" href="./2.2.html"><strong>自定义H5页面</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="应用下载模版" href="./2.3.html"><strong>应用下载模版</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="分享" href="./2.4.html"><strong>分享</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="外链" href="./2.5.html"><strong>外链</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="开发规范"><strong style="cursor: inherit;">开发规范</strong> </a>
+                            
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="通用规范" href="./3.1.html"><strong>通用规范</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="前端工作流" href="./3.2.html"><strong>前端工作流</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="通用库" href="./3.3.html"><strong>通用库</strong> </a>
+                        </li>
+                        
+                        <li class="menu_primary_item ">
+                            <a class="menu_primary_link page_title_secondary" title="测试要求" href="./3.4.html"><strong>测试要求</strong> </a>
+                        </li>
+                        
+                        
+                        <li class="menu_primary_item ">
+                            
+                            <a class="menu_primary_link" title="常见问题答疑" href="./4.1.html"><strong style="color: #222;">常见问题答疑</strong> </a>
+                            
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col_main">
+                <div class="inner">
+                    <div class="yue">
+    <h1 class="page-title">自定义H5页面规范</h1>
+    <p>查看详情页也可支持自定义H5页面，用来展示更多内容。</p>
+<h3 id="交互规范"><a href="#交互规范" class="headerlink" title="交互规范"></a>交互规范</h3><ul>
+<li>分屏切换，支持横向和竖向，滑动指引需清晰</li>
+<li>若详情页加载较慢，需设计loading页，给予用户友好的提示</li>
+<li>如有视频，需在底部加上“建议在Wi-Fi环境下播放”提示</li>
+<li>建议一个页面不超过两种以上交互操作</li>
+</ul>
+<h3 id="设计规范"><a href="#设计规范" class="headerlink" title="设计规范"></a>设计规范</h3><ul>
+<li>页面尺寸建议：640像素×1100像素</li>
+<li>最小按钮宽度：160像素</li>
+<li>最小按钮高度：60像素</li>
+<li>页面最小字号：不小于24像素</li>
+<li>二维码最小尺寸：200像素×200像素 ，边距至少为10像素</li>
+<li>背景音乐规范：必须支持音乐可循环及可关闭，并采用渐强的方式出现</li>
+<li>音乐播放/关闭按钮，参加下图规范，并放置于页面右上角位置<br><img src="http://wximg.qq.com/wxp/wxmoment-doc/images/2-2-1.png" alt="h5-pic"></li>
+</ul>
+<h3 id="H5页面内嵌入全屏视频规范"><a href="#H5页面内嵌入全屏视频规范" class="headerlink" title="H5页面内嵌入全屏视频规范"></a>H5页面内嵌入全屏视频规范</h3><ul>
+<li>建议：使用流媒体播放，并添加可跳过播放按钮</li>
+<li>时长：≤ 45 秒</li>
+<li>视频编码：H.264/AVC</li>
+<li>FPS：推荐 24 fps</li>
+<li>码率：≤ 800 kbit/s</li>
+<li>音频格式：AAC</li>
+<li>音频码率：≤ 96 kbit/sec</li>
+<li>音频采样率：推荐 44.1 kHz</li>
+<li>文件大小限制：≤  5MB ( 实际大小与时长及码率对应，如20秒的视频，大小为 20秒×（800码率÷8）÷1024=1.95MB )</li>
+</ul>
+<div class="h3_ban">以下是禁止内容</div>
+
+<h4 id="直接诱导分享"><a href="#直接诱导分享" class="headerlink" title="直接诱导分享"></a>直接诱导分享</h4><p>不允许强制、诱导、胁迫/煽动用户将消息分享给好友或朋友圈的行为</p>
+<ul>
+<li>强制：分享后才能继续下一步操作，包括但不限于：分享后方可预订，分享后可知道答案等</li>
+<li>诱导：分享后对用户有奖励，包括但不限于：邀请好友拆礼盒，集赞，分享可增加一次抽奖机会等</li>
+<li>胁迫/煽动：用夸张语言来胁迫引诱用户分享，包括但不限于：“不转不是中国人”“请好心人转发一下”“转发后一生平安”“转疯了”等</li>
+</ul>
+<h4 id="间接诱导分享"><a href="#间接诱导分享" class="headerlink" title="间接诱导分享"></a>间接诱导分享</h4><p>不允许在H5页面中出现分享给好友的按钮，并且点击后出现浮层指向右上方引导用户去分享</p>
+<h4 id="诱导关注"><a href="#诱导关注" class="headerlink" title="诱导关注"></a>诱导关注</h4><p>不允许出现以奖励或其他方式，强制或诱导用户关注公众号的行为<br>奖励的方式包括但不限于：实物奖品、虚拟奖品（积分、信息）等</p>
+<h4 id="红包类的页面"><a href="#红包类的页面" class="headerlink" title="红包类的页面"></a>红包类的页面</h4><p>不允许出现红包字眼和发红包的体验，如：</p>
+<ul>
+<li>利用送“红包”字眼吸引用户转发，用户点击后跳转到产品促销、打折广告等页面</li>
+<li>发布虚假，含木马链接的未归类“红包”</li>
+<li>有诱导行为的“红包”或微信红包</li>
+<li>抢红包外挂类软件、应用</li>
+</ul>
+<h4 id="小游戏"><a href="#小游戏" class="headerlink" title="小游戏"></a>小游戏</h4><p>不允许出现小游戏或测试类页面</p>
+<h4 id="竞品内容"><a href="#竞品内容" class="headerlink" title="竞品内容"></a>竞品内容</h4><p>不允许出现与腾讯系产品有直接竞争关系的产品内容</p>
+<h4 id="抽奖活动"><a href="#抽奖活动" class="headerlink" title="抽奖活动"></a>抽奖活动</h4><p>不允许出现抽奖活动</p>
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot" id="footer">
+    <ul class="links ft">
+        <li class="links_item no_extra">
+            <a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=home/agreement_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">服务协议</a>
+        </li>
+        <li class="links_item">
+            <a href="/cgi-bin/readtemplate?t=business/faq_operation_tmpl&amp;type=info&amp;lang=zh_CN&amp;token=" target="_blank">运营规范</a>
+        </li>
+        <li class="links_item">
+            <a href="http://kf.qq.com/product/weixinmp.html" target="_blank">客服中心</a>
+        </li>
+        <li class="links_item">
+            <a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=40012345&amp;f=1&amp;ty=1&amp;ap=000011:400792:|m:12|f:400792:m:12" target="_blank">在线客服</a>
+        </li>
+        <li class="links_item"><a href="mailto:weixinmp@qq.com" target="_blank">联系邮箱</a></li>
+        <li class="links_item"><a href="/cgi-bin/readtemplate?t=home/infringement_tmpl&amp;lang=zh_CN" target="_blank">侵权投诉</a>
+        </li>
+        <li class="links_item"><p class="copyright">Copyright © 2012-2015 Tencent. All Rights Reserved.</p></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46146097" charset="UTF-8"></script>
+<script>
+    var windowHeight = $(window).height();
+    var $colSide = $(".col_side");
+    var $containerLink = $(".container_hd-link");
+    var $colMain = $(".col_main");
+
+    var standard = {
+        //判断是否是微信 WebView
+        isWeixin : function () {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        },
+
+        //显示/隐藏左侧菜单
+        navToggle : function () {
+            $colSide.toggleClass("col_side_show");
+        }
+    }
+    $(function(){
+        $(".page-title:empty").hide();
+
+        if(standard.isWeixin()){
+            document.title = "微信朋友圈广告规范";
+        }
+
+        if(typeof window.ontouchstart === 'undefined') {
+            $containerLink.on("click",standard.navToggle);
+            $colMain.on("click",function (e) {
+                $colSide.removeClass("col_side_show");
+            })
+        }
+        else {
+            $containerLink.on("tap",standard.navToggle);
+            $colMain.on("tap",function (e) {
+                if(e.target.tagName.toLowerCase()!= "img"){
+//                    console.log("点不到图片,侧边栏消失");
+                    $colSide.removeClass("col_side_show");
+                }
+            })
+        }
+
+        //阻止目录滑时带动主体内容滑动
+        $colSide
+                .on('touchstart', function(e) {
+                    startY = e.touches[0].pageY;
+                })
+                .on("touchmove", function (e) {
+                    diffY = e.touches[0].pageY - startY;
+
+                    if((diffY>0 && $(this).scrollTop() == 0)
+                                    || (diffY<0 && $(this).scrollTop()+windowHeight == $(this)[0].scrollHeight)) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                })
+
+        if (typeof WeixinJSBridge == "object"
+            && typeof WeixinJSBridge.invoke == "function") {
+//            console.log("暂不处理图片预览");
+        }
+        else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    $(".inner img").tap(function () {
+                        if(!$colSide.hasClass("col_side_show") && !$(this).hasClass("index-img")){
+//                            console.log("侧边栏没有show的类或者图片不是首页图");
+                            var imgUrls = [];
+                            $(this).parents(".yue").find("img").each(function () {
+                                imgUrls.push($(this).attr("src"));
+                            });
+                            WeixinJSBridge.invoke('imagePreview', {
+                                current: $(this).attr("src"),
+                                urls: imgUrls
+                            }, function(res){
+                                console.log(res.err_msg);
+                            });
+                        }else{
+//                            console.log("点到了图片,侧边栏现在消失");
+                            $colSide.removeClass("col_side_show");
+                        }
+                    })
+                }, false);
+            }
+        }
+    })
+</script>
+</body>
+</html>
