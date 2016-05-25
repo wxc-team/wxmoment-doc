@@ -4,27 +4,20 @@
     <meta charset="utf-8">
     <meta name=renderer content=webkit>
     
-    <title>视频广告规范 | 微信朋友圈广告规范</title>
+    <title>春节摇一摇H5页面开发规范 | 微信朋友圈广告规范</title>
     
     <meta name="author" content="WXG_OPB_Design">
     
     
     <meta name="description"
-          content="视频广告是更为生动的展现方式，有情节、故事性强的内容，更容易让用户对品牌产生兴趣并留下深刻印象。
-外层缩略视频规范
-时长：6秒
-格式：MP4
-视频编码：H.264/AVC
-格式类型：Main Profile
-分辨率：640×480px
-文件大小：≤ 700KB
-视频码率：≤ 800 kbit/s
-帧">
+          content="针对春节摇一摇H5页面开发，相关规范说明。
+目录结构请务必按照以下目录结构来进行开发：
+├── css                         //样式表目录│   └── style.css├── js                          //js目录│   └── inde">
     
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:title" content="视频广告规范"/>
+    <meta property="og:title" content="春节摇一摇H5页面开发规范"/>
     
     <meta property="og:site_name" content="微信朋友圈广告规范"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,7 +64,7 @@
                             <a class="menu_primary_link page_title_secondary" title="图片" href="./1.2.html"><strong>图片</strong> </a>
                         </li>
                         
-                        <li class="menu_primary_item selected ">
+                        <li class="menu_primary_item ">
                             <a class="menu_primary_link page_title_secondary" title="视频广告" href="./1.3.html"><strong>视频广告</strong> </a>
                         </li>
                         
@@ -139,41 +132,29 @@
             <div class="col_main">
                 <div class="inner">
                     <div class="yue">
-    <h1 class="page-title">视频广告规范</h1>
-    <p>视频广告是更为生动的展现方式，有情节、故事性强的内容，更容易让用户对品牌产生兴趣并留下深刻印象。<br><img src="http://wximg.qq.com/wxp/wxmoment-doc/images/1-3-1.png" alt="video"></p>
-<h3 id="外层缩略视频规范"><a href="#外层缩略视频规范" class="headerlink" title="外层缩略视频规范"></a>外层缩略视频规范</h3><ul>
-<li>时长：6秒</li>
-<li>格式：MP4</li>
-<li>视频编码：H.264/AVC</li>
-<li>格式类型：Main Profile</li>
-<li>分辨率：640×480px</li>
-<li>文件大小：≤ 700KB</li>
-<li>视频码率：≤ 800 kbit/s</li>
-<li>帧率：推荐 24 fps</li>
-<li>音频格式：AAC</li>
-<li>音频码率：≤ 96 kbit/sec</li>
-<li>音频采样率：推荐 44.1 kHz</li>
-</ul>
-<p>默认图片（可选）：</p>
-<ul>
-<li>尺寸：480×360px</li>
-<li>大小：小于100k</li>
-</ul>
-<h3 id="完整视频规范"><a href="#完整视频规范" class="headerlink" title="完整视频规范"></a>完整视频规范</h3><ul>
-<li>时长：小于 300 秒</li>
-<li>格式：MP4</li>
-<li>视频编码：H.264/AVC</li>
-<li>格式类型：Baseline Profile</li>
-<li>分辨率：960×720 / 960×540px</li>
-<li>文件大小：≤ 25MB</li>
-<li>视频码率：≤ 800 kbit/s</li>
-<li>帧率：推荐 24 fps</li>
-<li>音频格式：AAC</li>
-<li>音频码率：≤ 96 kbit/sec</li>
-<li>音频采样率：推荐 44.1 kHz</li>
-</ul>
-<h3 id="完整视频页分享规范"><a href="#完整视频页分享规范" class="headerlink" title="完整视频页分享规范"></a>完整视频页分享规范</h3><p>详细内容请查看“<a href="http://wximg.qq.com/wxp/wxmoment-doc/2.4.html">详情页分享规范</a>”</p>
-<p><br><br>视频处理上有疑问，请参考《<a href="http://wximg.qq.com/wxp/temp/VideoResizeMethod.pdf">视频检测及压缩方法</a>》</p>
+    <h1 class="page-title">春节摇一摇H5页面开发规范</h1>
+    <p>针对春节摇一摇H5页面开发，相关规范说明。</p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>请务必按照以下目录结构来进行开发：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">├── css                         //样式表目录</span><br><span class="line">│   └── style.css</span><br><span class="line">├── js                          //js目录</span><br><span class="line">│   └── index.js</span><br><span class="line">├── img                         //图片目录</span><br><span class="line">│   └── bg.png</span><br><span class="line">└── index.html                  //小型视音频目录</span><br></pre></td></tr></table></figure>
+<h3 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h3><ol>
+<li>html文件只能命名为index.html，必须放置在一级目录下，只能有一个html文件。</li>
+<li>所有引用的资源文件都必须使用相对路径，包括但不限于图片、脚本、样式文件。</li>
+<li>禁止一切网络请求，包括但不限于数据请求，统计上报。</li>
+<li>目录中文件请保证只存在 .html/.js/.css/.png/.jpg/.jpeg 格式的文件，不得包含其他类型的文件。</li>
+<li>请注意检查是否含有 .svn/.git/.DS_Store/Thumbs.db/.log 等隐藏系统文件，若存在需删除。</li>
+</ol>
+<h3 id="开发完成"><a href="#开发完成" class="headerlink" title="开发完成"></a>开发完成</h3><p><strong>打包项目</strong></p>
+<p>在本地开发完成后，请将您的项目在根目录打包成zip格式文件，交给我们的项目接口人。</p>
+<blockquote>
+<p>请注意是根目录打包，不要包含上级目录，压缩包打开后里面是css、js、img的根级目录。<br>打包必须使用zip格式打包，<font color="#e15f63">请不要使用rar打包后修改拓展名来伪装zip格式！</font></p>
+</blockquote>
+<p><strong>压缩包命名</strong></p>
+<p>命名规则：YYYYMMDD-promo-品牌名称。<br>YYYYMMDD 为 4 位年份，2 位月份，2 位日期数字组成，品牌名称为全小写英文字母。</p>
+<h3 id="其他要求"><a href="#其他要求" class="headerlink" title="其他要求"></a>其他要求</h3><ol>
+<li>不允许有背景音乐</li>
+<li>不允许有视频播放</li>
+<li>不需要loading页面</li>
+</ol>
 
 </div>
                 </div>
